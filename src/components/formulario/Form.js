@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet, TextInput } from "react-native";
 import Tarefa from "../tarefa/Tarefa";
+import {Button} from 'react-native-paper'
 
 export default function Form(){
     const[tarefa, setTarefa] = useState()
@@ -26,9 +27,7 @@ export default function Form(){
                     style={styles.input}
                     placeholder="Adicione uma tarefa"/>
 
-                <TouchableOpacity style={styles.btn} onPress={handleTarefa}>
-                    <Text>+</Text>
-                </TouchableOpacity>
+                <Button icon='plus-thick' mode='contained' style={styles.btn} onPress={handleTarefa}/>
             </View>
             
             <View style={styles.contentTarefa}>
@@ -43,7 +42,7 @@ export default function Form(){
 const styles = StyleSheet.create({
     container:{
         width: '100%',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-between',
         alignItems: 'center',
         padding: 20,
         backgroundColor: '#fff',
@@ -64,10 +63,9 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     btn:{
-        padding: 20,
-        fontSize: 18,
-        backgroundColor: '#fee',
-        borderWidth: 2,
-        borderRadius: 10
+        alignItems: 'center',
+        padding: 10,
+        borderRadius: 10,
+        marginLeft: 5
     }
 })
